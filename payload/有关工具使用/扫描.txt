@@ -1,0 +1,2 @@
+D:\CTF\WEB\Web\dirsearch-master/
+python dirsearch.py -u  【网址】 -e【语言】

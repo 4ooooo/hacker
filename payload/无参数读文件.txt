@@ -1,0 +1,5 @@
+查看当前目录文件名
+print_r(scandir(current(localeconv())))
+
+所以我们还可以用print_r(scandir(getcwd()));输出当前文件夹所有文件名
+

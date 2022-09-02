@@ -1,0 +1,27 @@
+伪协议
+1.php伪协议：
+需要开启allow_url_fopen的：php://input、php://stdin、php://memory和php://temp
+
+不需要开启allow_wrl_fopen的：php://filter
+
+在CTF中经常使用的是php://filter和php://input
+
+php://filter用于读取源码，php://input用于执行php代码
+
+php://input需要post请求提交数据
+
+php://filter可以get提交?a=php://filter/read=convert.base64-encode/resource=xxx.php
+
+2.data协议
+php5.2.0起，数据流封装器开始有效，主要用于数据流的读取。如果传入的数据是PHP代码，就会执行代码
+
+使用方法:data://text/plain;base64,xxxx(base64编码后的数据)
+
+data伪协议只有在php<5.3且include=on时可以写木马。
+
+3.file协议
+file://用于访问本地文件系统
+
+用法：file:// [文件的绝对路径和文件名]
+
+#<?php system('find / -name flag*'); ?>

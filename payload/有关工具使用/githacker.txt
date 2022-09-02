@@ -1,0 +1,2 @@
+D:\CTF\WEB\Web\GitHack-master
+python GitHack.py http/.git

@@ -1,0 +1,4 @@
+cd D:\phpStudy\PHPTutorial\MySQL\bin
+d:
+mysql -uroot -p
+密码：root

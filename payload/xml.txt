@@ -1,0 +1,42 @@
+dtd的引入方式
+DTD（文档类型定义）的作用是定义 XML 文档的合法构建模块。DTD 可以在 XML 文档内声明，也可以外部引用。
+内部 DTD
+使用内部的dtd文件，即将约束规则定义在xml文档中
+
+<!DOCTYPE 根元素名称 [元素声明]>
+示例代码：
+
+<?xml version="1.0"?>
+<!DOCTYPE note [<!--定义此文档是 note 类型的文档-->
+<!ELEMENT note (to,from,heading,body)><!--定义note元素有四个元素-->
+<!ELEMENT to (#PCDATA)><!--定义to元素为”#PCDATA”类型-->
+<!ELEMENT from (#PCDATA)><!--定义from元素为”#PCDATA”类型-->
+<!ELEMENT head (#PCDATA)><!--定义head元素为”#PCDATA”类型-->
+<!ELEMENT body (#PCDATA)><!--定义body元素为”#PCDATA”类型-->
+]>
+<note>
+<to>Y0u</to>
+<from>@re</from>
+<head>v3ry</head>
+<body>g00d!</body>
+</note>
+外部 DTD
+（1）引入外部的dtd文件
+
+<!DOCTYPE 根元素名称 SYSTEM "dtd路径">
+（2）使用外部的dtd文件(网络上的dtd文件)
+
+<!DOCTYPE 根元素 PUBLIC "DTD名称" "DTD文档的URL">
+当使用外部DTD时，通过如下语法引入：
+
+<!DOCTYPE root-element SYSTEM "filename">
+示例代码：
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE root-element SYSTEM "test.dtd">
+<note>
+<to>Y0u</to>
+<from>@re</from>
+<head>v3ry</head>
+<body>g00d!</body>
+</note>

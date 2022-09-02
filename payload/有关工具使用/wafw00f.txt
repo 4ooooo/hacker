@@ -1,0 +1,3 @@
+cd D:\PYTHON1\Lib\site-packages\wafw00f-2.1.0-py3.7.egg\wafw00f
+d:
+main.py url1
